@@ -1,9 +1,23 @@
 service_name: roboshop-frontend
 anote: 'service.beta.kubernetes.io/azure-load-balancer-resource-group: "denmark-east"'
+
 ports:
   - protocol: TCP
     port: 80
     targetPort: 80
+
 loadBalancerIP: "9.205.152.5"
+
 loadBalancer: true
+
 config_map: {}
+
+container_name: nginx
+
+replica_count: 1
+
+port: 80
+
+image:
+  name: nareshroboshop.azurecr.io/roboshop-frontend
+  version: latest

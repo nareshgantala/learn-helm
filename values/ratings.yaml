@@ -8,3 +8,21 @@ config_map:
 ports:
   - port: 8006
     targetPort: 8006
+
+db_container_name: ratings-db
+
+replica_count: 1
+
+env:
+  - configMapRef:
+    name: roboshop-ratings
+
+db_image: nareshroboshop.azurecr.io/roboshop-ratings-db
+
+restart_policy: Never
+
+imagePullPolicy: Always
+
+image:
+  name: nareshroboshop.azurecr.io/roboshop-ratings
+  version: latest

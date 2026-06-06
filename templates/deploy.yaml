@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.name }}
+  name: {{ .Values.service_name }}
   labels: 
-{{- toYaml .Values.deployLabels | nindent 4 }}
+    app: {{ .Values.service_name }}
 
 spec:
   replicas: {{ .Values.replica_count }}
@@ -18,7 +18,7 @@ spec:
 
     spec:
       containers:
-      - name: {{ .Values.container_name }}
+      - name: {{ .Values.service_name }}
         image: "{{ .Values.image.name }}:{{ .Values.image.version }}"
         ports:
         - containerPort: {{ .Values.port }}
