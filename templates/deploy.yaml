@@ -9,12 +9,12 @@ spec:
   replicas: {{ .Values.replica_count }}
   selector:
     matchLabels: 
-{{- toYaml .Values.deployLabels | nindent 6 }}
+      app: {{ .Values.service_name }}
 
   template:
     metadata:
       labels: 
-{{- toYaml .Values.deployLabels | nindent 8 }}
+        app: {{ .Values.service_name }}
 
     spec:
       containers:
