@@ -6,3 +6,4 @@ ports:
     targetPort: 80
 loadBalancerIP: "9.205.152.5"
 loadBalancer: true
+config_map: {}
