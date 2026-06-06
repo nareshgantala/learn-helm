@@ -1,3 +1,4 @@
+service_name: roboshop-ratings
 config_map:
   data: |
       MYSQL_HOST: "mysql-dev.naresh-training.online"
