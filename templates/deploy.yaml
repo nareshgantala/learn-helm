@@ -8,11 +8,11 @@ spec:
   replicas: {{ .Values.replacia_count }}
   selector:
     matchLabels:
-      {{.Values.deployLabels }}
+      {{ .Values.deployLabels }}
   template:
     metadata:
       labels:
-           {{.Values.deployLabels }}
+           {{ .Values.deployLabels }}
     spec:
       containers:
       - name: {{ .Values.container_name }}
