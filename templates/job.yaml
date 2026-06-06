@@ -16,5 +16,5 @@ spec:
         
         envFrom:
           - configMapRef:
-            name: {{ .Values.service_name }}
+              name: {{ .Values.service_name }}
 {{ end }}
