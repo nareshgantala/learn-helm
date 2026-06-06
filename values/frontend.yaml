@@ -1,0 +1,6 @@
+service_name: roboshop-frontend
+anote: 'service.beta.kubernetes.io/azure-load-balancer-resource-group: "denmark-east"'
+ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
