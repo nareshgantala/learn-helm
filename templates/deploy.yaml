@@ -2,14 +2,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.name }}
-  labels: {{ .Values.deployLabels }}
+  labels: {{ toYaml .Values.deployLabels }}
 spec:
   replicas: {{ .Values.replacia_count }}
   selector:
-    matchLabels: {{ .Values.deployLabels }}
+    matchLabels: {{ toYaml .Values.deployLabels }}
   template:
     metadata:
-      labels: {{ .Values.deployLabels }}
+      labels: {{ toYaml .Values.deployLabels }}
     spec:
       containers:
       - name: {{ .Values.container_name }}
