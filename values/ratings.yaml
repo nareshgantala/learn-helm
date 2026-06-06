@@ -13,10 +13,6 @@ db_container_name: ratings-db
 
 replica_count: 1
 
-env:
-  - configMapRef:
-    name: roboshop-ratings
-
 db_image: nareshroboshop.azurecr.io/roboshop-ratings-db
 
 restart_policy: Never

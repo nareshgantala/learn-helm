@@ -11,4 +11,5 @@ spec:
         image: {{ .Values.db_image }}
         imagePullPolicy: {{ .Values.imagePullPolicy }}
         envFrom:
-        {{ toYaml .Values.env }}
+          - configMapRef:
+            name: {{ .Values.service_name }}
