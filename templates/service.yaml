@@ -4,7 +4,7 @@ metadata:
   name: {{ .Values.service_name }}
   {{ if .Values.loadBalancer}}
   annotations:
-{{-toYaml .Values.anote | nindent 4 }}
+{{- toYaml .Values.anote | nindent 4 }}
    {{ end }}
 spec:
   {{ if .Values.loadBalancer}}
