@@ -22,3 +22,5 @@ imagePullPolicy: Always
 image:
   name: nareshroboshop.azurecr.io/roboshop-ratings
   version: latest
+
+db_enabled: true

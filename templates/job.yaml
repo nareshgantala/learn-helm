@@ -1,3 +1,4 @@
+{{ if .Values.db_enabled }}
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -16,3 +17,4 @@ spec:
         envFrom:
           - configMapRef:
             name: {{ .Values.service_name }}
+{{ end }}
