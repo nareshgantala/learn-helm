@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: roboshop-ratings
 data:
-{{- toYaml .Values.config_map.data }}
+{{- toYaml .Values.config_map | nindent 2 }}
