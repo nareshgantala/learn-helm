@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ .Values.name }}
   labels:
-   {{.Values.deployLabels }}
+   {{ .Values.deployLabels }}
 spec:
   replicas: {{ .Values.replacia_count }}
   selector:
