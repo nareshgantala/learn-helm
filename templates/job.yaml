@@ -2,14 +2,17 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: {{ .Values.service_name }}-db
+
 spec:
   template:
     spec:
       restartPolicy: {{ .Values.restart_policy }}
+
       containers:
       - name: {{ .Values.db_container_name }}
         image: {{ .Values.db_image }}
         imagePullPolicy: {{ .Values.imagePullPolicy }}
+        
         envFrom:
           - configMapRef:
             name: {{ .Values.service_name }}
