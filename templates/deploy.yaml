@@ -22,3 +22,8 @@ spec:
         image: "{{ .Values.image.name }}:{{ .Values.image.version }}"
         ports:
         - containerPort: {{ .Values.port }}
+        {{ if not .Values.loadBalancer }}
+        envFrom:
+          - configMapRef:
+              name: {{ .Values.service_name }}
+        {{ end }}
