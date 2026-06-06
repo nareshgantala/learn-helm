@@ -1,6 +1,5 @@
 service_name: roboshop-ratings
-config_map:
-  data: |
+config_map: |
       MYSQL_HOST: "mysql-dev.naresh-training.online"
       MYSQL_USER: "ratings"
       MYSQL_PASSWORD: "RoboShop@1"
