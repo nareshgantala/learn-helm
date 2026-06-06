@@ -10,4 +10,4 @@ spec:
   selector:
     app: {{ .Values.service_name }}
   ports:
-{{toYaml .Values.ports | nindent 2 }}
+{{- toYaml .Values.ports | nindent 2 }}
