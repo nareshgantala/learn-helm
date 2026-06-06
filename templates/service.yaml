@@ -11,7 +11,7 @@ spec:
   type: LoadBalancer
   loadBalancerIP: {{ .Values.loadBalancerIP }} 
   {{ else }}
-  type: clusterTP
+  type: clusterIP
   {{ end }}
   selector:
     app: {{ .Values.service_name }}
