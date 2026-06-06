@@ -5,7 +5,7 @@ metadata:
   labels: 
 {{- toYaml .Values.deployLabels | nindent 4 }}    
 spec:
-  replicas: {{ .Values.replacia_count }}
+  replicas: {{ .Values.replica_count }}
   selector:
     matchLabels: 
 {{- toYaml .Values.deployLabels | nindent 6 }}
