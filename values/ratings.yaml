@@ -1,7 +1,10 @@
 service_name: roboshop-ratings
-config_map: |
+config_map:
       MYSQL_HOST: "mysql-dev.naresh-training.online"
       MYSQL_USER: "ratings"
       MYSQL_PASSWORD: "RoboShop@1"
       MYSQL_DATABASE: "ratings"
       PORT: "8006"
+ports:
+  - port: 8006
+    targetPort: 8006
