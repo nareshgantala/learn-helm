@@ -2,8 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: roboshop-ratings
-
+  name: {{ .Values.service_name }}
 data:
 {{- toYaml .Values.config_map | nindent 2 }}
 {{ end }}

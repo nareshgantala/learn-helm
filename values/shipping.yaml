@@ -1,0 +1,28 @@
+service_name: roboshop-shipping
+replica_count: 1
+
+image:
+  repository: nareshroboshop.azurecr.io/roboshop-shipping
+  tag: latest
+
+ports:
+  - protocol: TCP
+    port: 8004
+    targetPort: 8004
+
+config_map:
+  DB_HOST : mysql-dev.naresh-training.online
+  DB_USER : shipping
+  DB_PASS : RoboShop@1
+  MYSQL_ROOT_PASSWORD : RoboShop@1
+  PORT : "8004"
+
+db_enabled: true
+restart_policy: Never
+
+db_image:
+  name: shipping-db
+  repository: nareshroboshop.azurecr.io/roboshop-shipping-db
+  tag: latest
+  imagePullPolicy: Always
+  
