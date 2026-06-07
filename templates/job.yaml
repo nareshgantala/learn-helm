@@ -10,9 +10,9 @@ spec:
       restartPolicy: {{ .Values.restart_policy }}
 
       containers:
-      - name: {{ .Values.db_container_name }}
-        image: {{ .Values.db_image }}
-        imagePullPolicy: {{ .Values.imagePullPolicy }}
+      - name: {{ .Values.db_image.name }}
+        image: {{ .Values.db_image.repository }}:{{ .Values.db_mage.tag }}
+        imagePullPolicy: {{ .Values.db_image.imagePullPolicy }}
         
         envFrom:
           - configMapRef:

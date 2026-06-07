@@ -14,3 +14,10 @@ config_map:
   MYSQL_PASSWORD: "RoboShop@1"
   MYSQL_DATABASE: "catalogue"
   PORT: "8002"
+
+db_enabled: true
+db_image:
+  name: catalogue-db
+  repository: nareshroboshop.azurecr.io/roboshop-catalogue-db
+  tag: latest
+  imagePullPolicy: Always
