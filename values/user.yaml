@@ -5,10 +5,10 @@ image:
   repository: nareshroboshop.azurecr.io/roboshop-user
   tag: latest
 
-  ports:
-  - protocol: TCP
-    port: 8001
-    targetPort: 8001
+ports:
+- protocol: TCP
+  port: 8001
+  targetPort: 8001
 
 config_map:
   MONGO_URL: "mongodb://mongodb-dev.naresh-training.online:27017/users"
