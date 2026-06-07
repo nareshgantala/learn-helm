@@ -11,7 +11,7 @@ spec:
 
       containers:
       - name: {{ .Values.db_image.name }}
-        image: {{ .Values.db_image.repository }}:{{ .Values.db_mage.tag }}
+        image: {{ .Values.db_image.repository }}:{{ .Values.db_image.tag }}
         imagePullPolicy: {{ .Values.db_image.imagePullPolicy }}
         
         envFrom:
