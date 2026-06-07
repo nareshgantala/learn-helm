@@ -20,7 +20,7 @@ restart_policy: Never
 imagePullPolicy: Always
 
 image:
-  name: nareshroboshop.azurecr.io/roboshop-ratings
-  version: latest
+  repository: nareshroboshop.azurecr.io/roboshop-ratings
+  tag: latest
 
 db_enabled: true

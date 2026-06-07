@@ -1,0 +1,5 @@
+service_name: roboshop-catalogue
+replica_count: 1
+image:
+  repository: nareshroboshop.azurecr.io/roboshop-catalogue
+  tag: latest

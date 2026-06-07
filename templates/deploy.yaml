@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: {{ .Values.service_name }}
-        image: "{{ .Values.image.name }}:{{ .Values.image.version }}"
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         {{- if  .Values.loadBalancer }}
         ports:
         - containerPort: {{ .Values.port }}

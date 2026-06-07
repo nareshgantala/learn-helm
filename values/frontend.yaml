@@ -19,5 +19,5 @@ replica_count: 1
 port: 80
 
 image:
-  name: nareshroboshop.azurecr.io/roboshop-frontend
-  version: latest
+  repository: nareshroboshop.azurecr.io/roboshop-frontend
+  tag: latest
