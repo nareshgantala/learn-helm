@@ -1,0 +1,16 @@
+service_name: roboshop-user
+
+
+image:
+  repository: nareshroboshop.azurecr.io/roboshop-user
+  tag: latest
+
+  ports:
+  - protocol: TCP
+    port: 8001
+    targetPort: 8001
+
+config_map:
+  MONGO_URL: "mongodb://mongodb-dev.naresh-training.online:27017/users"
+  JWT_SECRET: "roboshop-secret-key"
+  PORT: "8001"
