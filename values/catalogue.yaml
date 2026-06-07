@@ -8,3 +8,9 @@ ports:
   - protocol: TCP
     port: 8002
     targetPort: 8002
+config_map:
+  MYSQL_HOST: "mysql-dev.naresh-training.online"
+  MYSQL_USER: "catalogue"
+  MYSQL_PASSWORD: "RoboShop@1"
+  MYSQL_DATABASE: "catalogue"
+  PORT: "8002"
