@@ -9,11 +9,9 @@ ports:
   - port: 8006
     targetPort: 8006
 
-db_container_name: ratings-db
 
 replica_count: 1
 
-db_image: nareshroboshop.azurecr.io/roboshop-ratings-db
 
 restart_policy: Never
 
@@ -24,3 +22,9 @@ image:
   tag: latest
 
 db_enabled: true
+
+db_image:
+  name: ratings-db
+  repository: nareshroboshop.azurecr.io/roboshop-ratings-db
+  tag: latest
+  imagePullPolicy: Always
