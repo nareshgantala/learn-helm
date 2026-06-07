@@ -3,3 +3,8 @@ replica_count: 1
 image:
   repository: nareshroboshop.azurecr.io/roboshop-catalogue
   tag: latest
+
+ports:
+  - protocol: TCP
+    port: 8002
+    targetPort: 8002
