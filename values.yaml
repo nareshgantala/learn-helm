@@ -1,0 +1,9 @@
+job:
+  enabled: false
+
+ingress:
+  enabled: false
+
+config_map: {}
+
+service_type: ClusterIP

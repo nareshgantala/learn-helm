@@ -1,30 +1,14 @@
-service_name: roboshop-ratings
+app_name: ratings
+app_port: 8006
+
 config_map:
-      MYSQL_HOST: "mysql-dev.naresh-training.online"
-      MYSQL_USER: "ratings"
-      MYSQL_PASSWORD: "RoboShop@1"
-      MYSQL_DATABASE: "ratings"
-      PORT: "8006"
-ports:
-  - port: 8006
-    targetPort: 8006
+  MYSQL_HOST : mysql-dev.naresh-training.online
+  MYSQL_USER : ratings
+  MYSQL_PASSWORD : RoboShop@1
+  MYSQL_ROOT_PASSWORD : RoboShop@1
+  MYSQL_DATABASE : ratings
+  PORT : "8006"
 
+job:
+  enabled: true
 
-replica_count: 1
-
-
-restart_policy: Never
-
-imagePullPolicy: Always
-
-image:
-  repository: nareshroboshop.azurecr.io/roboshop-ratings
-  tag: latest
-
-db_enabled: true
-
-db_image:
-  name: ratings-db
-  repository: nareshroboshop.azurecr.io/roboshop-ratings-db
-  tag: latest
-  imagePullPolicy: Always

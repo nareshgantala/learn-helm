@@ -1,23 +1,15 @@
-service_name: roboshop-orders
-replica_count: 1
-
-image:
-  repository: nareshroboshop.azurecr.io/roboshop-orders
-  tag: latest
-
-ports:
-  - protocol: TCP
-    port: 8007
-    targetPort: 8007
+app_name: orders
+app_port: 8007
 
 config_map:
-  MONGO_URL: "mongodb://mongodb-dev.naresh-training.online:27017/orders"
-  AMQP_HOST: "rabbitmq-dev.naresh-training.online"
-  AMQP_USER: "roboshop"
-  AMQP_PASS: "RoboShop@1"
-  SHIPPING_URL: "http://roboshop-shipping:8004"
-  NOTIFICATION_URL: "http://localhost:8008"
-  PORT: "8007"
+  MONGO_URL : mongodb://mongodb-dev.naresh-training.online:27017/orders
+  AMQP_HOST : rabbitmq-dev.rdevopsb89.online
+  AMQP_USER : roboshop
+  AMQP_PASS : RoboShop@1
+  SHIPPING_URL : http://roboshop-shipping:8004
+  NOTIFICATION_URL : http://localhost:8008
+  PORT : "8007"
+
 
 
 

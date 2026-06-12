@@ -1,31 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.service_name }}
+  name: roboshop-{{ .Values.app_name }}
   labels: 
-    app: {{ .Values.service_name }}
+    app: roboshop-{{ .Values.app_name }}
 
 spec:
-  replicas: {{ .Values.replica_count }}
+  replicas: {{ .Values.replica_count| default 1 }}
   selector:
     matchLabels: 
-      app: {{ .Values.service_name }}
+      app: roboshop-{{ .Values.app_name }}
 
   template:
     metadata:
       labels: 
-        app: {{ .Values.service_name }}
+        app: roboshop-{{ .Values.app_name }}
 
     spec:
       containers:
-      - name: {{ .Values.service_name }}
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-        {{- if  .Values.loadBalancer }}
-        ports:
-        - containerPort: {{ .Values.port }}
-        {{- end }}
-        {{- if not .Values.loadBalancer }}
+      - name: roboshop-{{ .Values.app_name }}
+        image: "nareshroboshop.azurecr.io/roboshop-{{ .Values.app_name }}"
         envFrom:
           - configMapRef:
-              name: {{ .Values.service_name }}
-        {{- end }}
+              name: roboshop-{{ .Values.app_name }}

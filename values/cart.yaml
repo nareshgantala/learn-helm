@@ -1,14 +1,7 @@
-service_name: roboshop-cart
-replica_count: 1
-image:
-  repository: nareshroboshop.azurecr.io/roboshop-cart
-  tag: latest
+app_name: cart
+app_port: 8003
 
-ports:
-  - protocol: TCP
-    port: 8003
-    targetPort: 8003
 config_map:
-  REDIS_HOST: "valkey-dev.naresh-training.online"
-  CATALOGUE_URL: "http://roboshop-catalogue:8002"
-  PORT: "8003"
+  REDIS_HOST : valkey-dev.naresh-training.online
+  CATALOGUE_URL : http://roboshop-catalogue:8002
+  PORT : "8003"

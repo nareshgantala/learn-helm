@@ -1,8 +1,9 @@
-{{ if .Values.config_map }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Values.service_name }}
+  name: roboshop-{{ .Values.app_name }}
+  annotations:
+    helm.sh/hook: pre-install
+    helm.sh/hook-weight: "1"
 data:
-{{- toYaml .Values.config_map | nindent 2 }}
-{{ end }}
+  {{- toYaml .Values.config_map | nindent 2 }}

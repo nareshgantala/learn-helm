@@ -1,20 +1,20 @@
-{{ if .Values.db_enabled }}
+{{ if .Values.job.enabled }}
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: {{ .Values.service_name }}-db
-
+  name: roboshop-{{ .Values.app_name }}-db
+  annotations:
+    helm.sh/hook: pre-install
+    helm.sh/hook-weight: "2"
 spec:
   template:
     spec:
-      restartPolicy: {{ .Values.restart_policy }}
-
+      restartPolicy: Never
       containers:
-      - name: {{ .Values.db_image.name }}
-        image: {{ .Values.db_image.repository }}:{{ .Values.db_image.tag }}
-        imagePullPolicy: {{ .Values.db_image.imagePullPolicy }}
-        
+      - name: roboshop-{{ .Values.app_name }}-db
+        image: raghudevopsb89.azurecr.io/roboshop-{{ .Values.app_name }}-db
+        imagePullPolicy: Always
         envFrom:
           - configMapRef:
-              name: {{ .Values.service_name }}
+              name: roboshop-{{ .Values.app_name }}
 {{ end }}

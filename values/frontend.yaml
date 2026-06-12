@@ -1,23 +1,6 @@
-service_name: roboshop-frontend
-anote: 'service.beta.kubernetes.io/azure-load-balancer-resource-group: "denmark-east"'
+app_name: frontend
+app_port: 80
+#service_type: LoadBalancer  # Commented this, Because we moved to traefik ingress
 
-ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
-
-loadBalancerIP: "9.205.157.182"
-
-loadBalancer: true
-
-config_map: {}
-
-container_name: nginx
-
-replica_count: 1
-
-port: 80
-
-image:
-  repository: nareshroboshop.azurecr.io/roboshop-frontend
-  tag: latest
+ingress:
+  enabled: true

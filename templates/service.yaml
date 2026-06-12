@@ -1,22 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Values.service_name }}
-  {{- if .Values.loadBalancer}}
-  annotations:
-{{- .Values.anote | nindent 4 }}
-   {{- end }}
+  name: roboshop-{{ .Values.app_name }}
 
 spec:
-  {{- if .Values.loadBalancer }}
-  type: LoadBalancer
-  loadBalancerIP: {{ .Values.loadBalancerIP }} 
-  {{- else }}
-  type: ClusterIP
-  {{- end }}
-
+  type: {{ .Values.service_type | default "ClusterIP" }}
   selector:
-    app: {{ .Values.service_name }}
-    
+    app: roboshop-{{ .Values.app_name }}    
   ports:
-{{- toYaml .Values.ports | nindent 2 }}
+    - protocol: TCP
+      port: {{ .Values.app_port }} # Service Port
+      targetPort: {{ .Values.app_port }} # Container Port
