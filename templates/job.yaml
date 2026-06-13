@@ -12,7 +12,7 @@ spec:
       restartPolicy: Never
       containers:
       - name: roboshop-{{ .Values.app_name }}-db
-        image: raghudevopsb89.azurecr.io/roboshop-{{ .Values.app_name }}-db
+        image: nareshroboshop.azurecr.io/roboshop-{{ .Values.app_name }}-db
         imagePullPolicy: Always
         envFrom:
           - configMapRef:
