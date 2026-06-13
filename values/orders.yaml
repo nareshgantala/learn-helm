@@ -3,7 +3,7 @@ app_port: 8007
 
 config_map:
   MONGO_URL : mongodb://mongodb-dev.naresh-training.online:27017/orders
-  AMQP_HOST : rabbitmq-dev.rdevopsb89.online
+  AMQP_HOST : rabbitmq-dev.naresh-training.online
   AMQP_USER : roboshop
   AMQP_PASS : RoboShop@1
   SHIPPING_URL : http://roboshop-shipping:8004
