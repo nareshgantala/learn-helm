@@ -6,5 +6,3 @@ config_map:
   JWT_SECRET : roboshop-secret-key
   PORT : "8001"
 
-job:
-  enabled: true
